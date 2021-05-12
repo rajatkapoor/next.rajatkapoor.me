@@ -10,6 +10,10 @@ const colors = {
   },
 };
 
-const theme = extendTheme({ colors });
+export const theme = extendTheme({ colors });
 
-export default theme;
+export const responsive = (md, lg, xl) => ({
+  md,
+  lg,
+  xl,
+});
