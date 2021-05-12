@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex, Text, HStack } from "@chakra-ui/react";
 import NavButton from "./NavButton";
-import { responsive } from "../pages/_theme";
+import { responsive } from "../utils/styles";
 
 const NavBar = ({ navItems }) => {
   return (

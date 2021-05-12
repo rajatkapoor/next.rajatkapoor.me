@@ -1,8 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Box, HStack, Text, Flex, Grid, Button } from "@chakra-ui/react";
-import { responsive } from "./_theme";
-import NavButton from "../components/NavButton";
+import { Flex } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 
 const navItems = [
