@@ -1,10 +1,33 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Box } from "@chakra-ui/react";
+import { Box, HStack, Text, Flex, Grid, Button } from "@chakra-ui/react";
+import { responsive } from "./_theme";
+import NavButton from "../components/NavButton";
+import NavBar from "../components/NavBar";
+
+const navItems = [
+  {
+    text: "About",
+  },
+  {
+    text: "Projects",
+  },
+  {
+    text: "Blog",
+  },
+  {
+    text: "Contact",
+  },
+];
 
 export default function Home() {
   return (
-    <Box w={"100%"}>
+    <Flex
+      w={"100%"}
+      alignItems={"center"}
+      justifyContent="center"
+      className="container"
+    >
       <Head>
         <title>Rajat Kapoor - Full stack developer</title>
         <meta
@@ -13,7 +36,7 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box>hi</Box>
-    </Box>
+      <NavBar navItems={navItems} />
+    </Flex>
   );
 }
