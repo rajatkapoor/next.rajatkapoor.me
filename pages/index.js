@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Flex } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
+import Hero from "../components/Hero";
 
 const navItems = [
   {
@@ -24,6 +25,7 @@ export default function Home() {
       alignItems={"center"}
       justifyContent="center"
       className="container"
+      flexDirection={"column"}
     >
       <Head>
         <title>Rajat Kapoor - Full stack developer</title>
@@ -34,6 +36,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar navItems={navItems} />
+      <Hero />
     </Flex>
   );
 }

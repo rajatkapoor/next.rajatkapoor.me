@@ -11,6 +11,7 @@ const NavBar = ({ navItems }) => {
       justifyContent={"space-between"}
       flexGrow={1}
       height={"120px"}
+      width={"100%"}
     >
       <Text fontSize="xl">Rajat Kapoor</Text>
       <HStack spacing={8}>
