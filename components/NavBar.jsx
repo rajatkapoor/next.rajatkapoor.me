@@ -7,9 +7,9 @@ const NavBar = ({ navItems }) => {
   return (
     <Flex
       maxWidth={responsive("80%", "80%", "80em")}
+      flexGrow={1}
       alignItems={"center"}
       justifyContent={"space-between"}
-      flexGrow={1}
       height={"120px"}
       width={"100%"}
     >
