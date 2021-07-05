@@ -66,11 +66,11 @@ const ProjectCard = ({ name, image, colors }) => {
       };
   }
   return (
-    <Grid templateColumns={"6fr 2fr"} width={"full"} my={16}>
+    <Grid templateColumns={"8fr 4fr"} width={"full"} my={16}>
       <Flex flexBasis={3} overflow={"hidden"} flexGrow={1} rounded={"3xl"}>
         <Image
-          src="https://source.unsplash.com/random/1000x800"
-          //   src="/timely.png"
+          src="https://source.unsplash.com/random"
+          // src="/timely.png"
           alt="Timely app image"
           width={"full"}
           height={"600px"}
@@ -80,12 +80,12 @@ const ProjectCard = ({ name, image, colors }) => {
       <Flex flexGrow={0} flexBasis={1} align={"start"}>
         <Flex
           alignSelf={"center"}
-          height={"90%"}
+          height={"70%"}
           zIndex={40}
           padding={8}
           direction={"column"}
           justify={"center"}
-          ml={-32}
+          ml={"-70%"}
           {...styles}
           boxShadow={"dark-lg"}
           sx={{ backdropFilter: "blur(20px)" }}
