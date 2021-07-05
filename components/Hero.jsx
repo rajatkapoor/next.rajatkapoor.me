@@ -4,11 +4,13 @@ import SocialLinks from "./SocialLinks";
 
 const Hero = () => {
   return (
-    <VStack>
+    <VStack padding={[16]}>
       <Heading fontFamily={"heroHeading"}>Hey 👋</Heading>
       <Heading fontFamily={"heroHeading"}>I'm Rajat Kapoor</Heading>
       <Text fontSize={"lg"}>I create delightful products for the web</Text>
-      <SocialLinks />
+      <Flex padding={8}>
+        <SocialLinks my={16} />
+      </Flex>
     </VStack>
   );
 };

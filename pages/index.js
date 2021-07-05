@@ -2,6 +2,8 @@ import Head from "next/head";
 import { Flex } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
+import Work from "../components/Work";
+import SectionWrapper from "../components/SectionWrapper";
 
 const navItems = [
   {
@@ -36,7 +38,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar navItems={navItems} />
-      <Hero />
+      <SectionWrapper>
+        <Hero />
+      </SectionWrapper>
+      <SectionWrapper>
+        <Work />
+      </SectionWrapper>
     </Flex>
   );
 }
