@@ -10,7 +10,10 @@ const navItems = [
     text: "About",
   },
   {
-    text: "Projects",
+    text: "Work",
+  },
+  {
+    text: "Experience",
   },
   {
     text: "Blog",
