@@ -4,7 +4,13 @@ import Image from "next/image";
 const ChakraNextImage = ({ src, alt, ...rest }) => {
   return (
     <Box position="relative" {...rest}>
-      <Image objectFit="cover" src={src} alt={alt} layout="fill" />
+      <Image
+        placeholder="blur"
+        objectFit="cover"
+        src={src}
+        alt={alt}
+        layout="fill"
+      />
     </Box>
   );
 };
