@@ -4,6 +4,10 @@ import SocialLinks from "./SocialLinks";
 import WorkCard from "./WorkCard";
 import mocklyImage from "../assets/mockly-a.png";
 import timelyImage from "../assets/timely-b.png";
+import scirubyImage from "../assets/sciruby-b.png";
+import simpleCVImage from "../assets/simplecv-a.png";
+import rangeitImage from "../assets/rangeit-a.png";
+import ltkImage from "../assets/ltk-a.png";
 
 const WORKS = [
   {
@@ -17,23 +21,37 @@ const WORKS = [
     title: "Timely",
     text: "Timely is a slack app that autoconverts timezones in your chat messages. Just install and forget. It converts times into timezones of all people in the conversaiton and privately notifies them of the time in their respective timezones",
     imgSrc: timelyImage,
-    imgAlt: "mockly image",
+    imgAlt: "timely image",
     tags: ["slack", "timezone", "remote life"],
   },
-  // {
-  //   title: "Mockly",
-  //   text: "",
-  //   imgSrc: "https://source.unsplash.com/random",
-  //   imgAlt: "mockly image",
-  //   tags: ["react", "firebase", "3d css", "product hunt #1"],
-  // },
-  // {
-  //   title: "Mockly",
-  //   text: "",
-  //   imgSrc: "https://source.unsplash.com/random",
-  //   imgAlt: "mockly image",
-  //   tags: ["react", "firebase"],
-  // },
+  {
+    title: "Let them kill",
+    text: "Fast-paced, endless game where you let the enemies shoot bullets and kill each other while you escape your enemies and their bullets",
+    imgSrc: ltkImage,
+    imgAlt: "let them kill image",
+    tags: ["game dev", "unity", "android"],
+  },
+  {
+    title: "Ruby Science Foundation",
+    text: "Worked on the integration, minimizations and matrix libraries using Ruby and C++ adding more feature and support for using GNU Scientific Libraries for faster computations",
+    imgSrc: scirubyImage,
+    imgAlt: "simple cv image",
+    tags: ["GSoC", "open source", "ruby", "c++"],
+  },
+  {
+    title: "Range-IT",
+    text: "Created the vision system of Range-IT Project to create a standalone, wearable, assistive device which processed stereo data in real time to extend the mobility of visually impaired people in an indoor environment at Human-Computer Interaction Lab, TU Dresden",
+    imgSrc: rangeitImage,
+    imgAlt: "range it project",
+    tags: ["python", "computer vision", "pointcloud", "research"],
+  },
+  {
+    title: "Simple CV",
+    text: "Worked on creating an interactive rendering system for SimpleCV which made it independent of the obsolete PyGame library. Developed the system using PyGTK and Cairo, along with a web counterpart compatible with IPython Notebooks using JavaScript and Processing.js",
+    imgSrc: simpleCVImage,
+    imgAlt: "simple cv image",
+    tags: ["GSoC", "open source", "python", "c++"],
+  },
 ];
 
 const Hero = () => {
@@ -51,7 +69,7 @@ const Hero = () => {
         placeItems={"center"}
         gap={{ base: 8 }}
       >
-        {WORKS.map((work) => {
+        {WORKS.map((work, i) => {
           const { title, text, imgSrc, imgAlt, tags } = work;
           return (
             <WorkCard
@@ -60,6 +78,7 @@ const Hero = () => {
               imgSrc={imgSrc}
               imgAlt={imgAlt}
               tags={tags}
+              key={i}
             />
           );
         })}
