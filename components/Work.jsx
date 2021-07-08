@@ -59,10 +59,19 @@ const Hero = ({ refProp }) => {
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita perferendis quae neque optio repellendus. Quidem alias voluptatum quibusdam delectus ducimus recusandae sapiente. Veritatis aliquid autem quis illo, nam doloribus? Maxime.";
   return (
     <Flex w={"full"} direction="column" align="center">
-      <Heading fontFamily={"heroHeading"}>Work</Heading>
-      <Text fontSize={"lg"}>Some of my projects</Text>
+      <Heading
+        size="4xl"
+        fontFamily={"heroHeading"}
+        fontWeight={"bold"}
+        textStyle="gradient"
+      >
+        Work
+      </Heading>
+      <Text fontSize={"xl"} fontWeight="light" marginTop={{ base: 4, md: 4 }}>
+        Some of my projects
+      </Text>
       <SimpleGrid
-        marginTop={{ base: 8 }}
+        marginTop={{ base: 8, md: 16 }}
         columns={{ base: 1, md: 2 }}
         spacing={{ base: 0, md: 8, lg: 24 }}
         className="yolo"

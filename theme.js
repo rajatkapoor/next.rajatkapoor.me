@@ -14,7 +14,14 @@ const colors = {
 const fonts = {
   heroHeading: "Raleway",
 };
+const layerStyles = {};
+const textStyles = {
+  gradient: {
+    bgGradient: "linear(to-l, #7928CA,#FF0080)",
+    bgClip: "text",
+  },
+};
 
-const theme = extendTheme({ colors, fonts });
+const theme = extendTheme({ colors, fonts, layerStyles, textStyles });
 
 export default theme;

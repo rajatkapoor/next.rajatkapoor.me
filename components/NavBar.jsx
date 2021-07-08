@@ -1,17 +1,20 @@
 import React from "react";
-import { Flex, Text, HStack } from "@chakra-ui/react";
+import { Flex, Text, HStack, Heading, Container } from "@chakra-ui/react";
 import NavButton from "./NavButton";
 
 const NavBar = ({ navItems }) => {
   return (
     <Flex
+      w="full"
       flexGrow={1}
       alignItems={"center"}
-      justifyContent={"space-between"}
+      justifyContent={"space-around"}
       height={"120px"}
       width={"100%"}
     >
-      <Text fontSize="xl">Rajat Kapoor</Text>
+      <Heading size={"md"} fontFamily={"heroHeading"}>
+        Rajat Kapoor
+      </Heading>
       <HStack spacing={8} display={{ base: "none", md: "block" }}>
         {navItems.map((navItem, i) => {
           return (

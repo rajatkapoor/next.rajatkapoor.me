@@ -30,7 +30,7 @@ export default function Home() {
     },
   ];
   return (
-    <Container maxW={"8xl"} ref={meRef}>
+    <>
       <Head>
         <title>Rajat Kapoor - Full stack developer</title>
         <meta
@@ -40,12 +40,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar navItems={navItems} />
-      <SectionWrapper>
-        <Hero />
-      </SectionWrapper>
-      <SectionWrapper>
-        <Work refProp={workRef} />
-      </SectionWrapper>
-    </Container>
+      <Container maxW={"7xl"} ref={meRef}>
+        <SectionWrapper>
+          <Hero />
+        </SectionWrapper>
+        <SectionWrapper>
+          <Work refProp={workRef} />
+        </SectionWrapper>
+      </Container>
+    </>
   );
 }
