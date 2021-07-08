@@ -2,37 +2,38 @@ import { Flex, Text, Heading, VStack, SimpleGrid } from "@chakra-ui/react";
 import React from "react";
 import SocialLinks from "./SocialLinks";
 import WorkCard from "./WorkCard";
-import img from "../assets/img.jpg";
+import mocklyImage from "../assets/mockly-a.png";
+import timelyImage from "../assets/timely-b.png";
 
 const WORKS = [
   {
     title: "Mockly",
     text: "Mockly is a easy to use ebook mockup generator. Perfect for generating simple 3d mockups for your info products and ebooks",
-    imgSrc: "https://source.unsplash.com/random",
+    imgSrc: mocklyImage,
     imgAlt: "Mockly image",
     tags: ["react", "firebase", "ebooks", "product hunt #1"],
   },
   {
     title: "Timely",
     text: "Timely is a slack app that autoconverts timezones in your chat messages. Just install and forget. It converts times into timezones of all people in the conversaiton and privately notifies them of the time in their respective timezones",
-    imgSrc: "https://source.unsplash.com/random",
+    imgSrc: timelyImage,
     imgAlt: "mockly image",
     tags: ["slack", "timezone", "remote life"],
   },
-  {
-    title: "Mockly",
-    text: "",
-    imgSrc: "https://source.unsplash.com/random",
-    imgAlt: "mockly image",
-    tags: ["react", "firebase", "3d css", "product hunt #1"],
-  },
-  {
-    title: "Mockly",
-    text: "",
-    imgSrc: "https://source.unsplash.com/random",
-    imgAlt: "mockly image",
-    tags: ["react", "firebase"],
-  },
+  // {
+  //   title: "Mockly",
+  //   text: "",
+  //   imgSrc: "https://source.unsplash.com/random",
+  //   imgAlt: "mockly image",
+  //   tags: ["react", "firebase", "3d css", "product hunt #1"],
+  // },
+  // {
+  //   title: "Mockly",
+  //   text: "",
+  //   imgSrc: "https://source.unsplash.com/random",
+  //   imgAlt: "mockly image",
+  //   tags: ["react", "firebase"],
+  // },
 ];
 
 const Hero = () => {
