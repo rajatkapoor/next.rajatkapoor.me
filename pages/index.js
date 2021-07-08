@@ -7,7 +7,7 @@ import SectionWrapper from "../components/SectionWrapper";
 
 const navItems = [
   {
-    text: "About",
+    text: "Me",
   },
   {
     text: "Work",
