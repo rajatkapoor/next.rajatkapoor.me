@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Flex } from "@chakra-ui/react";
+import { Container, Flex } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
 import Work from "../components/Work";
@@ -22,13 +22,7 @@ const navItems = [
 
 export default function Home() {
   return (
-    <Flex
-      w={"100%"}
-      alignItems={"center"}
-      justifyContent="center"
-      className="container"
-      flexDirection={"column"}
-    >
+    <Container maxW={"8xl"}>
       <Head>
         <title>Rajat Kapoor - Full stack developer</title>
         <meta
@@ -44,6 +38,6 @@ export default function Home() {
       <SectionWrapper>
         <Work />
       </SectionWrapper>
-    </Flex>
+    </Container>
   );
 }

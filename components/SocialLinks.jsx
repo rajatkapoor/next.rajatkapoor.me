@@ -17,7 +17,7 @@ const SocialLink = ({ url, icon }) => (
 
 const SocialLinks = () => {
   return (
-    <Stack direction="row" spacing={4}>
+    <Stack direction="row" spacing={4} alignItems={{ base: "flex-start" }}>
       <SocialLink url={LINKS.twitter} icon={FaTwitter} />
       <SocialLink url={LINKS.linkedin} icon={FaLinkedin} />
       <SocialLink url={LINKS.github} icon={FaGithub} />
