@@ -29,7 +29,7 @@ const WorkCard = ({ title, text, date, imgSrc, imgAlt, tags }) => {
       <Stack paddingX={{ base: 4, md: 8 }} paddingBottom={[8]}>
         <Flex wrap="wrap">
           {tags.map((tag) => (
-            <Tag mr={2} my={1}>
+            <Tag mr={2} my={1} key={tag}>
               {tag}
             </Tag>
           ))}
