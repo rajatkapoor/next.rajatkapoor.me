@@ -4,28 +4,33 @@ import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
 import Work from "../components/Work";
 import SectionWrapper from "../components/SectionWrapper";
-
-const navItems = [
-  {
-    text: "Me",
-  },
-  {
-    text: "Work",
-  },
-  {
-    text: "Experience",
-  },
-  {
-    text: "Blog",
-  },
-  {
-    text: "Contact",
-  },
-];
+import { useRef } from "react";
 
 export default function Home() {
+  const meRef = useRef(null);
+  const workRef = useRef(null);
+
+  const navItems = [
+    {
+      text: "Me",
+      refProp: meRef,
+    },
+    {
+      text: "Work",
+      refProp: workRef,
+    },
+    {
+      text: "Experience",
+    },
+    {
+      text: "Blog",
+    },
+    {
+      text: "Contact",
+    },
+  ];
   return (
-    <Container maxW={"8xl"}>
+    <Container maxW={"8xl"} ref={meRef}>
       <Head>
         <title>Rajat Kapoor - Full stack developer</title>
         <meta
@@ -39,7 +44,7 @@ export default function Home() {
         <Hero />
       </SectionWrapper>
       <SectionWrapper>
-        <Work />
+        <Work refProp={workRef} />
       </SectionWrapper>
     </Container>
   );

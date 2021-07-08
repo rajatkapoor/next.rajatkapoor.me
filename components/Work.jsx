@@ -54,7 +54,7 @@ const WORKS = [
   },
 ];
 
-const Hero = () => {
+const Hero = ({ refProp }) => {
   const text =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita perferendis quae neque optio repellendus. Quidem alias voluptatum quibusdam delectus ducimus recusandae sapiente. Veritatis aliquid autem quis illo, nam doloribus? Maxime.";
   return (
@@ -68,6 +68,7 @@ const Hero = () => {
         className="yolo"
         placeItems={"center"}
         gap={{ base: 8 }}
+        ref={refProp}
       >
         {WORKS.map((work, i) => {
           const { title, text, imgSrc, imgAlt, tags } = work;

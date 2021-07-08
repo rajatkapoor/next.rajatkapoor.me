@@ -14,7 +14,9 @@ const NavBar = ({ navItems }) => {
       <Text fontSize="xl">Rajat Kapoor</Text>
       <HStack spacing={8} display={{ base: "none", md: "block" }}>
         {navItems.map((navItem, i) => {
-          return <NavButton text={navItem.text} key={i} />;
+          return (
+            <NavButton text={navItem.text} refProp={navItem.refProp} key={i} />
+          );
         })}
       </HStack>
     </Flex>
