@@ -9,14 +9,8 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <title>Rajat Kapoor - Full stack developer</title>
-          <meta
-            name="description"
-            content="Rajat Kapoor is a full stack developer from India"
-          />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
+        <Head />
+
         <body>
           <Main />
           <NextScript />
