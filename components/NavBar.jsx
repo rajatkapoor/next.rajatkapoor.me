@@ -1,8 +1,33 @@
 import React from "react";
-import { Flex, Text, HStack, Heading, Container } from "@chakra-ui/react";
+import {
+  Flex,
+  Text,
+  HStack,
+  Heading,
+  Container,
+  Box,
+  IconButton,
+  VStack,
+  useColorModeValue,
+  useDisclosure,
+  Button,
+} from "@chakra-ui/react";
+import { AiOutlineMenu } from "react-icons/ai";
 import NavButton from "./NavButton";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from "@chakra-ui/react";
+import NavButtonMobile from "./NavButtonMobile";
 
 const NavBar = ({ navItems }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Flex
       w="full"
@@ -15,10 +40,55 @@ const NavBar = ({ navItems }) => {
       <Heading size={"md"} fontFamily={"heroHeading"}>
         Rajat Kapoor
       </Heading>
-      <HStack spacing={8} display={{ base: "none", md: "block" }}>
-        {navItems.map((navItem, i) => {
-          return <NavButton {...navItem} key={i} />;
-        })}
+      <HStack>
+        <HStack spacing={8} display={{ base: "none", md: "block" }}>
+          {navItems.map((navItem, i) => {
+            return <NavButton {...navItem} key={i} />;
+          })}
+        </HStack>
+        <Box display={{ base: "inline-flex", md: "none" }}>
+          <IconButton
+            display={{ base: "flex", md: "none" }}
+            aria-label="Open menu"
+            fontSize="20px"
+            color={useColorModeValue("gray.800", "inherit")}
+            variant="ghost"
+            icon={<AiOutlineMenu />}
+            onClick={onOpen}
+          />
+          <Drawer
+            onClose={onClose}
+            isOpen={isOpen}
+            size={"full"}
+            placement="top"
+          >
+            {/* <DrawerOverlay /> */}
+            <DrawerContent>
+              <DrawerBody>
+                <VStack
+                  pos="absolute"
+                  top={0}
+                  left={0}
+                  right={0}
+                  display={isOpen ? "flex" : "none"}
+                  flexDirection="column"
+                  p={2}
+                  pb={4}
+                  m={2}
+                  spacing={3}
+                  rounded="sm"
+                  shadow="sm"
+                >
+                  {navItems.map((navItem, i) => {
+                    return (
+                      <NavButtonMobile {...navItem} key={i} onClose={onClose} />
+                    );
+                  })}
+                </VStack>
+              </DrawerBody>
+            </DrawerContent>
+          </Drawer>
+        </Box>
       </HStack>
     </Flex>
   );

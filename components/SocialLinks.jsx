@@ -6,7 +6,7 @@ const LINKS = {
   twitter: "https://twitter.com/therajatkapoor",
   linkedin: "https://linkedin.com/in/rajat100493",
   github: "https://github.com/rajatkapoor",
-  instagram: "https://www.instagram.com/rajat100493/?hl=en",
+  // instagram: "https://www.instagram.com/rajat100493/?hl=en",
 };
 
 const SocialLink = ({ url, icon }) => (
