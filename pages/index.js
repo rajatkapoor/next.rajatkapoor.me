@@ -42,14 +42,6 @@ export default function Home() {
   ];
   return (
     <>
-      <Head>
-        <title>Rajat Kapoor - Full stack developer</title>
-        <meta
-          name="description"
-          content="Rajat Kapoor is a full stack developer from India"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <NavBar navItems={navItems} onLogoClick={scrollToRef(topRef)} />
       <Container maxW={"7xl"} ref={topRef}>
         <SectionWrapper>
