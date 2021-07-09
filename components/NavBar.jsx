@@ -24,8 +24,13 @@ import {
   DrawerCloseButton,
 } from "@chakra-ui/react";
 import NavButtonMobile from "./NavButtonMobile";
+const Logo = ({ onLogoClick }) => (
+  <Heading size={"md"} fontFamily={"heroHeading"} onClick={onLogoClick}>
+    Rajat Kapoor
+  </Heading>
+);
 
-const NavBar = ({ navItems }) => {
+const NavBar = ({ navItems, onLogoClick }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -33,13 +38,11 @@ const NavBar = ({ navItems }) => {
       w="full"
       flexGrow={1}
       alignItems={"center"}
-      justifyContent={"space-around"}
+      justifyContent={"space-between"}
       height={"120px"}
-      width={"100%"}
+      px={{ base: 8, md: 8, lg: 32 }}
     >
-      <Heading size={"md"} fontFamily={"heroHeading"}>
-        Rajat Kapoor
-      </Heading>
+      <Logo onClick={onLogoClick} />
       <HStack>
         <HStack spacing={8} display={{ base: "none", md: "block" }}>
           {navItems.map((navItem, i) => {
@@ -59,26 +62,23 @@ const NavBar = ({ navItems }) => {
           <Drawer
             onClose={onClose}
             isOpen={isOpen}
-            size={"full"}
             placement="top"
+            isCentered
+            isFullHeight
+            motionPreset="slideInBottom"
           >
-            {/* <DrawerOverlay /> */}
+            <DrawerOverlay />
             <DrawerContent>
+              <DrawerHeader
+                mb={10}
+                alignItems="center"
+                justifyContent="center"
+                textAlign="center"
+              >
+                <Logo onClick={onLogoClick} />
+              </DrawerHeader>
               <DrawerBody>
-                <VStack
-                  pos="absolute"
-                  top={0}
-                  left={0}
-                  right={0}
-                  display={isOpen ? "flex" : "none"}
-                  flexDirection="column"
-                  p={2}
-                  pb={4}
-                  m={2}
-                  spacing={3}
-                  rounded="sm"
-                  shadow="sm"
-                >
+                <VStack flexDirection="column" spacing={6}>
                   {navItems.map((navItem, i) => {
                     return (
                       <NavButtonMobile {...navItem} key={i} onClose={onClose} />

@@ -1,20 +1,13 @@
 import React from "react";
 import { Button, Icon, Text } from "@chakra-ui/react";
-import { FiExternalLink } from "react-icons/fi";
 
-const NavButton = ({ text, refProp, externalLink }) => {
+const NavButton = ({ text, onClickNav, leftIcon }) => {
   return (
     <Button
       colorScheme="gray"
       variant="ghost"
-      onClick={() => {
-        if (refProp) {
-          refProp.current.scrollIntoView({ behavior: "smooth" });
-        } else if (externalLink) {
-          window.location = "https://blog.rajatkapoor.me";
-        }
-      }}
-      leftIcon={externalLink ? <FiExternalLink /> : undefined}
+      onClick={onClickNav}
+      leftIcon={leftIcon}
     >
       <Text fontSize="xl">{text}</Text>
     </Button>

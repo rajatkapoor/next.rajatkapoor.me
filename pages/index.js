@@ -6,31 +6,38 @@ import Work from "../components/Work";
 import SectionWrapper from "../components/SectionWrapper";
 import { useRef } from "react";
 import Experience from "../components/Experience";
+import { FiExternalLink } from "react-icons/fi";
+
+const scrollToRef = (ref) => () => {
+  ref.current.scrollIntoView({ behavior: "smooth" });
+};
 
 export default function Home() {
-  const meRef = useRef(null);
+  const topRef = useRef(null);
   const workRef = useRef(null);
   const experienceRef = useRef(null);
 
   const navItems = [
     {
-      text: "Me",
-      refProp: meRef,
-    },
-    {
       text: "Work",
-      refProp: workRef,
+      onClickNav: scrollToRef(workRef),
     },
     {
       text: "Experience",
-      refProp: experienceRef,
+      onClickNav: scrollToRef(experienceRef),
     },
     {
       text: "Blog",
-      externalLink: "https://blog.rajatkapoor.me",
+      onClickNav: () => {
+        window.location = "https://blog.rajatkapoor.me";
+      },
+      leftIcon: <FiExternalLink />,
     },
     {
       text: "Contact",
+      onClickNav: () => {
+        console.log("contact clicked");
+      },
     },
   ];
   return (
@@ -43,8 +50,8 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavBar navItems={navItems} />
-      <Container maxW={"7xl"} ref={meRef}>
+      <NavBar navItems={navItems} onLogoClick={scrollToRef(topRef)} />
+      <Container maxW={"7xl"} ref={topRef}>
         <SectionWrapper>
           <Hero />
         </SectionWrapper>

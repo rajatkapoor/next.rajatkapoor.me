@@ -1,23 +1,18 @@
 import React from "react";
 import { Button, Icon, Text } from "@chakra-ui/react";
-import { FiExternalLink } from "react-icons/fi";
 
-const NavButtonMobile = ({ text, refProp, externalLink, onClose }) => {
+const NavButtonMobile = ({ text, onClickNav, onClose, leftIcon }) => {
   return (
     <Button
       colorScheme="gray"
       variant="ghost"
       onClick={() => {
-        if (refProp) {
-          onClose();
-          setTimeout(() => {
-            refProp.current.scrollIntoView({ behavior: "smooth" });
-          }, 10);
-        } else if (externalLink) {
-          window.location = "https://blog.rajatkapoor.me";
-        }
+        onClose();
+        setTimeout(() => {
+          onClickNav();
+        }, 300);
       }}
-      leftIcon={externalLink ? <FiExternalLink /> : undefined}
+      leftIcon={leftIcon}
     >
       <Text fontSize="xl">{text}</Text>
     </Button>
