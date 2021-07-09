@@ -54,11 +54,9 @@ const WORKS = [
   },
 ];
 
-const Hero = ({ refProp }) => {
-  const text =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita perferendis quae neque optio repellendus. Quidem alias voluptatum quibusdam delectus ducimus recusandae sapiente. Veritatis aliquid autem quis illo, nam doloribus? Maxime.";
+const Work = ({ refProp }) => {
   return (
-    <Flex w={"full"} direction="column" align="center">
+    <Flex w={"full"} direction="column" align="center" ref={refProp}>
       <Heading
         size="4xl"
         fontFamily={"heroHeading"}
@@ -68,16 +66,14 @@ const Hero = ({ refProp }) => {
         Work
       </Heading>
       <Text fontSize={"xl"} fontWeight="light" marginTop={{ base: 4, md: 4 }}>
-        Some of my projects
+        Some of my interesting projects
       </Text>
       <SimpleGrid
         marginTop={{ base: 8, md: 16 }}
         columns={{ base: 1, md: 2 }}
         spacing={{ base: 0, md: 8, lg: 24 }}
-        className="yolo"
         placeItems={"center"}
         gap={{ base: 8 }}
-        ref={refProp}
       >
         {WORKS.map((work, i) => {
           const { title, text, imgSrc, imgAlt, tags } = work;
@@ -97,4 +93,4 @@ const Hero = ({ refProp }) => {
   );
 };
 
-export default Hero;
+export default Work;

@@ -25,6 +25,7 @@ const WorkCard = ({ title, text, date, imgSrc, imgAlt, tags }) => {
         minWidth="300px"
         w={{ base: "100%", md: "100%" }}
         height={"300px"}
+        blur
       />
       <Stack paddingX={{ base: 4, md: 8 }} paddingBottom={[8]}>
         <Flex wrap="wrap">

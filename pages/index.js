@@ -5,10 +5,12 @@ import Hero from "../components/Hero";
 import Work from "../components/Work";
 import SectionWrapper from "../components/SectionWrapper";
 import { useRef } from "react";
+import Experience from "../components/Experience";
 
 export default function Home() {
   const meRef = useRef(null);
   const workRef = useRef(null);
+  const experienceRef = useRef(null);
 
   const navItems = [
     {
@@ -21,6 +23,7 @@ export default function Home() {
     },
     {
       text: "Experience",
+      refProp: experienceRef,
     },
     {
       text: "Blog",
@@ -46,6 +49,9 @@ export default function Home() {
         </SectionWrapper>
         <SectionWrapper>
           <Work refProp={workRef} />
+        </SectionWrapper>
+        <SectionWrapper>
+          <Experience refProp={experienceRef} />
         </SectionWrapper>
       </Container>
     </>
