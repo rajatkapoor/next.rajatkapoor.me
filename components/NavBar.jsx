@@ -12,7 +12,7 @@ import {
   useDisclosure,
   Button,
 } from "@chakra-ui/react";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import NavButton from "./NavButton";
 import {
   Drawer,
@@ -68,14 +68,25 @@ const NavBar = ({ navItems, onLogoClick }) => {
             motionPreset="slideInBottom"
           >
             <DrawerOverlay />
-            <DrawerContent>
-              <DrawerHeader
-                mb={10}
-                alignItems="center"
-                justifyContent="center"
-                textAlign="center"
-              >
-                <Logo onClick={onLogoClick} />
+
+            <DrawerContent px={{ base: 2, md: 8, lg: 32 }}>
+              <DrawerHeader mb={10} w="full">
+                {/* <VStack> */}
+                <Button
+                  width="full"
+                  display={{ base: "flex", md: "none" }}
+                  aria-label="Open menu"
+                  fontSize="20px"
+                  color={useColorModeValue("gray.800", "inherit")}
+                  variant="ghost"
+                  leftIcon={<AiOutlineClose />}
+                  onClick={onClose}
+                  marginTop={8}
+                >
+                  Close
+                </Button>
+                {/* <Logo onClick={onLogoClick} /> */}
+                {/* </VStack> */}
               </DrawerHeader>
               <DrawerBody>
                 <VStack flexDirection="column" spacing={6}>
