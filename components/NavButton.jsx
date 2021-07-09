@@ -1,15 +1,24 @@
 import React from "react";
-import { Button, Text } from "@chakra-ui/react";
+import { Button, Icon, Text } from "@chakra-ui/react";
+import { FiExternalLink } from "react-icons/fi";
 
-const NavButton = ({ text, refProp }) => {
+const NavButton = ({ text, refProp, externalLink }) => {
+  console.log(
+    "🚀 ~ file: NavButton.jsx ~ line 6 ~ NavButton ~ externalLink",
+    externalLink
+  );
   return (
     <Button
       colorScheme="gray"
       variant="ghost"
       onClick={() => {
-        console.log(refProp);
-        refProp.current.scrollIntoView({ behavior: "smooth" });
+        if (refProp) {
+          refProp.current.scrollIntoView({ behavior: "smooth" });
+        } else if (externalLink) {
+          window.location = "https://blog.rajatkapoor.me";
+        }
       }}
+      leftIcon={externalLink ? <FiExternalLink /> : undefined}
     >
       <Text fontSize="xl">{text}</Text>
     </Button>

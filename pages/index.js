@@ -27,6 +27,7 @@ export default function Home() {
     },
     {
       text: "Blog",
+      externalLink: "https://blog.rajatkapoor.me",
     },
     {
       text: "Contact",
