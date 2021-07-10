@@ -3,6 +3,8 @@ import { Container, Flex } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
 import Work from "../components/Work";
+import Contact from "../components/Contact";
+import SocialLinks from "../components/SocialLinks";
 import SectionWrapper from "../components/SectionWrapper";
 import { useRef } from "react";
 import Experience from "../components/Experience";
@@ -16,6 +18,7 @@ export default function Home() {
   const topRef = useRef(null);
   const workRef = useRef(null);
   const experienceRef = useRef(null);
+  const contactRef = useRef(null);
 
   const navItems = [
     {
@@ -35,9 +38,7 @@ export default function Home() {
     },
     {
       text: "Contact",
-      onClickNav: () => {
-        console.log("contact clicked");
-      },
+      onClickNav: scrollToRef(contactRef),
     },
   ];
   return (
@@ -60,6 +61,12 @@ export default function Home() {
         </SectionWrapper>
         <SectionWrapper>
           <Experience refProp={experienceRef} />
+        </SectionWrapper>
+        <SectionWrapper>
+          <Contact refProp={contactRef} />
+        </SectionWrapper>
+        <SectionWrapper>
+          <SocialLinks my={16} />
         </SectionWrapper>
       </Container>
     </>

@@ -61,8 +61,9 @@ const Experience = ({ refProp }) => {
       >
         Experience
       </Heading>
-      <Text fontSize={"xl"} fontWeight="light" marginTop={{ base: 4, md: 4 }}>
-        What I have been doing and where
+      <Text marginTop={8} fontSize="2xl" textAlign="center">
+        {/* <Text fontSize={"xl"} fontWeight="light" marginTop={{ base: 4, md: 4 }}> */}
+        The places that I have been working on the coolest of technologies
       </Text>
       <Stack
         margin={{ base: 12, md: 16 }}

@@ -65,7 +65,8 @@ const Work = ({ refProp }) => {
       >
         Work
       </Heading>
-      <Text fontSize={"xl"} fontWeight="light" marginTop={{ base: 4, md: 4 }}>
+      {/* <Text fontSize={"xl"} fontWeight="light" marginTop={{ base: 4, md: 4 }}> */}
+      <Text marginTop={8} fontSize="2xl" textAlign="center">
         Some of my interesting projects
       </Text>
       <SimpleGrid
