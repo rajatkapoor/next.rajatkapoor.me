@@ -6,6 +6,7 @@ import {
   Box,
   IconButton,
   Button,
+  Link,
 } from "@chakra-ui/react";
 import React from "react";
 import SocialLinks from "./SocialLinks";
@@ -34,13 +35,15 @@ const Contact = ({ refProp }) => {
         </Text>
       </Flex>
       <Button
+        as={Link}
         size="lg"
         textDecoration="underline"
         variant="link"
         colorScheme={"black"}
         padding={4}
+        href={"mailto: hi@rajatkapoor.me"}
       >
-        <Heading>hi@rajatkapoor.me</Heading>
+        <Text fontSize="2xl">hi@rajatkapoor.me</Text>
       </Button>
     </VStack>
   );
