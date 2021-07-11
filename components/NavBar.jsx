@@ -1,10 +1,7 @@
 import React from "react";
 import {
   Flex,
-  Text,
   HStack,
-  Heading,
-  Container,
   Box,
   IconButton,
   VStack,
@@ -35,8 +32,12 @@ const NavBar = ({ navItems, onLogoClick }) => {
       flexGrow={1}
       alignItems={"center"}
       justifyContent={"space-between"}
-      height={"120px"}
+      height={"64px"}
       px={{ base: 8, md: 8, lg: 32 }}
+      backdropFilter={"blur(16px) saturate(180%)"}
+      border="1px solid rgba(255, 255, 255, 0.125)"
+      position="fixed"
+      zIndex={100}
     >
       <Logo onClick={onLogoClick} />
       <HStack>

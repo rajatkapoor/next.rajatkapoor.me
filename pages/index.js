@@ -52,7 +52,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar navItems={navItems} onLogoClick={scrollToRef(topRef)} />
-      <Container maxW={"7xl"} ref={topRef}>
+      <Container maxW={"7xl"} ref={topRef} paddingTop="64px">
         <SectionWrapper>
           <Hero />
         </SectionWrapper>
