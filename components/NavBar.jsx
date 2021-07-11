@@ -34,8 +34,9 @@ const NavBar = ({ navItems, onLogoClick }) => {
       justifyContent={"space-between"}
       height={"64px"}
       px={{ base: 8, md: 8, lg: 32 }}
+      backgroundColor="rbga(255,255,255,0.1)"
       backdropFilter={"blur(16px) saturate(180%)"}
-      border="1px solid rgba(255, 255, 255, 0.125)"
+      border="1px solid rgba(209, 213, 219, 0.3)"
       position="fixed"
       zIndex={100}
     >
