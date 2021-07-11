@@ -34,6 +34,7 @@ const JobCard = ({ companyName, position, imgSrc, imgAlt, tags, period }) => {
         align={"center"}
         justify={"center"}
         alignSelf="center"
+        objectFit="cover"
       />
       <Flex
         w="full"
