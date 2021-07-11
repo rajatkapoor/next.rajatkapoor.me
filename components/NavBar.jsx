@@ -24,11 +24,7 @@ import {
   DrawerCloseButton,
 } from "@chakra-ui/react";
 import NavButtonMobile from "./NavButtonMobile";
-const Logo = ({ onLogoClick }) => (
-  <Heading size={"md"} fontFamily={"heroHeading"} onClick={onLogoClick}>
-    Rajat Kapoor
-  </Heading>
-);
+import Logo from "./Logo";
 
 const NavBar = ({ navItems, onLogoClick }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();

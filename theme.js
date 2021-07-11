@@ -1,6 +1,7 @@
 // 1. Import the extendTheme function
 import { extendTheme } from "@chakra-ui/react";
-import raleway from "@fontsource/raleway";
+import "@fontsource/raleway";
+import "@fontsource/comfortaa";
 
 // 2. Extend the theme to include custom colors, fonts, etc
 const colors = {
@@ -13,6 +14,7 @@ const colors = {
 };
 const fonts = {
   heroHeading: "Raleway",
+  logo: "Comfortaa",
 };
 const layerStyles = {};
 const textStyles = {

@@ -743,6 +743,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/comfortaa@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/comfortaa/-/comfortaa-4.5.0.tgz#6eda928cd48277d2fb45f7ea994cd15fcb0e940b"
+  integrity sha512-1DQR70B1Nvhgsvz8nxAy68H4yt0egXE/6GHDgFqn1XtJUJM18uNwxFd3hxta4IRLmKQv2N2Ec/UF0N724IMSZA==
+
 "@fontsource/raleway@^4.4.5":
   version "4.4.5"
   resolved "https://registry.yarnpkg.com/@fontsource/raleway/-/raleway-4.4.5.tgz#483871d82aa35e6a981b370b44dbae0b9d59ca6c"
