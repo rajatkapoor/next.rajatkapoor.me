@@ -6,7 +6,6 @@ const MotionButton = motion(Button);
 const NavButton = ({ text, onClickNav, leftIcon }) => {
   return (
     <MotionButton
-      colorScheme="gray"
       variant="unstyled"
       onClick={onClickNav}
       leftIcon={leftIcon}

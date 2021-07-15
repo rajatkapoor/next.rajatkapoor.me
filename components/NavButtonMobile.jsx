@@ -23,7 +23,6 @@ const MotionButton = motion(Button);
 const NavButtonMobile = ({ text, onClickNav, toggleOpen, leftIcon }) => {
   return (
     <MotionButton
-      colorScheme="gray"
       variant="ghost"
       onClick={() => {
         toggleOpen();
