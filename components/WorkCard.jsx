@@ -16,7 +16,6 @@ import {
   TagRightIcon,
   TagCloseButton,
 } from "@chakra-ui/react";
-import Image from "next/image";
 
 const WorkCard = ({ title, text, date, imgSrc, imgAlt, tags }) => {
   return (
@@ -38,18 +37,7 @@ const WorkCard = ({ title, text, date, imgSrc, imgAlt, tags }) => {
         blur
         objectFit="cover"
       />
-      {/* <Box minWidth="300px" w={{ base: "100%", md: "100%" }} height={"300px"}>
-        <Image
-          className="image"
-          src={imgSrc}
-          alt={imgAlt}
-          // objectFit="cover"
-          // placeholder={"blur"}
-          layout="responsive"
-          height={300}
-          width={500}
-        />
-      </Box> */}
+
       <Stack paddingX={{ base: 4, md: 8 }} paddingBottom={[8]}>
         <Flex wrap="wrap">
           {tags.map((tag) => (
