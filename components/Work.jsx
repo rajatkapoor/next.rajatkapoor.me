@@ -56,7 +56,13 @@ const WORKS = [
 
 const Work = ({ refProp }) => {
   return (
-    <Flex w={"full"} direction="column" align="center" ref={refProp}>
+    <Flex
+      w={"full"}
+      maxWidth="5xl"
+      direction="column"
+      align="center"
+      ref={refProp}
+    >
       <Heading
         size="4xl"
         fontFamily={"heroHeading"}
@@ -65,16 +71,16 @@ const Work = ({ refProp }) => {
       >
         Work
       </Heading>
-      {/* <Text fontSize={"xl"} fontWeight="light" marginTop={{ base: 4, md: 4 }}> */}
       <Text marginTop={8} fontSize="2xl" textAlign="center">
         Some of my interesting projects
       </Text>
-      <SimpleGrid
+
+      <Flex
+        direction={{ base: "column", md: "row" }}
         marginTop={{ base: 8, md: 16 }}
-        columns={{ base: 1, md: 2 }}
-        spacing={{ base: 0, md: 8, lg: 24 }}
         placeItems={"center"}
-        gap={{ base: 8 }}
+        flexWrap={"wrap"}
+        justifyContent="space-evenly"
       >
         {WORKS.map((work, i) => {
           const { title, text, imgSrc, imgAlt, tags } = work;
@@ -89,7 +95,7 @@ const Work = ({ refProp }) => {
             />
           );
         })}
-      </SimpleGrid>
+      </Flex>
     </Flex>
   );
 };

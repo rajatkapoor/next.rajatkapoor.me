@@ -1,4 +1,12 @@
-import { Button, Flex, Heading, HStack, Stack, Text } from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  Heading,
+  HStack,
+  Stack,
+  Text,
+  Box,
+} from "@chakra-ui/react";
 import React from "react";
 import ChakraNextImage from "./ChakraNextImage";
 import {
@@ -8,16 +16,18 @@ import {
   TagRightIcon,
   TagCloseButton,
 } from "@chakra-ui/react";
+import Image from "next/image";
 
 const WorkCard = ({ title, text, date, imgSrc, imgAlt, tags }) => {
   return (
     <Stack
-      maxW={{ lg: "500px" }}
+      maxW={{ lg: "450px" }}
       w={{ base: "90%" }}
       h="100%"
       boxShadow={"2xl"}
       rounded="2xl"
       overflow="hidden"
+      marginTop={16}
     >
       <ChakraNextImage
         src={imgSrc}
@@ -28,6 +38,18 @@ const WorkCard = ({ title, text, date, imgSrc, imgAlt, tags }) => {
         blur
         objectFit="cover"
       />
+      {/* <Box minWidth="300px" w={{ base: "100%", md: "100%" }} height={"300px"}>
+        <Image
+          className="image"
+          src={imgSrc}
+          alt={imgAlt}
+          // objectFit="cover"
+          // placeholder={"blur"}
+          layout="responsive"
+          height={300}
+          width={500}
+        />
+      </Box> */}
       <Stack paddingX={{ base: 4, md: 8 }} paddingBottom={[8]}>
         <Flex wrap="wrap">
           {tags.map((tag) => (
@@ -38,7 +60,7 @@ const WorkCard = ({ title, text, date, imgSrc, imgAlt, tags }) => {
         </Flex>
         <Stack paddingTop={2} flexBasis={1}>
           <Heading size={"md"}>{title}</Heading>
-          <Text>{text}</Text>
+          <Text noOfLines={3}>{text}</Text>
         </Stack>
         {/* <Button
           variant="unstyled"
