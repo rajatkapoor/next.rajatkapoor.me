@@ -33,8 +33,8 @@ const variants = {
     opacity: 1,
     display: "flex",
     transition: {
-      duration: 0.2,
-      opacity: { delay: 0.1, duration: 0.5 },
+      duration: 0.3,
+      opacity: { delay: 0.2, duration: 0.3 },
       display: { delay: 0.2 },
     },
   },
