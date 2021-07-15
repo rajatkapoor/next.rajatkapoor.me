@@ -21,7 +21,7 @@ import Image from "next/image";
 const WorkCard = ({ title, text, date, imgSrc, imgAlt, tags }) => {
   return (
     <Stack
-      maxW={{ lg: "450px" }}
+      maxW={{ base: "450px" }}
       w={{ base: "90%" }}
       h="100%"
       boxShadow={"2xl"}
