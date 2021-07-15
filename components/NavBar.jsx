@@ -54,9 +54,7 @@ const NavBar = ({ navItems, onLogoClick }) => {
       w="full"
       px={{ base: 2, md: 8, lg: 32 }}
       backgroundColor="rgba(255,255,255,0.1)"
-      backdropFilter={
-        isOpen ? "blur(16px) saturate(110%)" : "blur(8px) saturate(120%)"
-      }
+      backdropFilter={"blur(16px) saturate(110%)"}
       outline="1px solid rgba(209, 213, 219, 0.3)"
       position="fixed"
       animate={isOpen ? "open" : "closed"}
