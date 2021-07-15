@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import NavButton from "./NavButton";
+import NavbarToggle from "./NavbarToggle";
 import {
   Drawer,
   DrawerBody,
@@ -23,93 +24,82 @@ import {
 } from "@chakra-ui/react";
 import NavButtonMobile from "./NavButtonMobile";
 import Logo from "./Logo";
+import { motion } from "framer-motion";
+
+const MotionFlex = motion(Flex);
+const variants = {
+  open: {
+    height: "100vh",
+    opacity: 1,
+    display: "flex",
+    transition: {
+      duration: 0.2,
+      opacity: { delay: 0.1, duration: 0.5 },
+      display: { delay: 0.2 },
+    },
+  },
+  closed: {
+    height: "0px",
+    opacity: 0,
+    display: "none",
+    transition: { duration: 0.2, display: { delay: 0.2 } },
+  },
+};
 
 const NavBar = ({ navItems, onLogoClick }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Flex
+    <MotionFlex
       w="full"
-      height={"64px"}
-      px={{ base: 8, md: 8, lg: 32 }}
-      backgroundColor="rbga(255,255,255,0.1)"
-      backdropFilter={"blur(8px) saturate(180%)"}
-      border="1px solid rgba(209, 213, 219, 0.3)"
+      px={{ base: 2, md: 8, lg: 32 }}
+      backgroundColor="rgba(255,255,255,0.1)"
+      backdropFilter={
+        isOpen ? "blur(16px) saturate(110%)" : "blur(8px) saturate(120%)"
+      }
+      outline="1px solid rgba(209, 213, 219, 0.3)"
       position="fixed"
+      animate={isOpen ? "open" : "closed"}
       zIndex={100}
     >
       <Container
         display="flex"
-        flexGrow={1}
         alignItems={"center"}
-        justifyContent={"space-between"}
-        maxWidth={"8xl"}
+        justifyContent={"center"}
+        maxWidth={"7xl"}
+        flexDirection="column"
       >
-        <Logo onClick={onLogoClick} />
-        <HStack>
+        <Flex w="full" height="64px" direction="row" alignItems="center">
+          <Box flexGrow={1}>
+            <Logo onClick={onLogoClick} />
+          </Box>
           <HStack spacing={8} display={{ base: "none", md: "block" }}>
             {navItems.map((navItem, i) => {
               return <NavButton {...navItem} key={i} />;
             })}
           </HStack>
-          <Box display={{ base: "inline-flex", md: "none" }}>
-            <IconButton
-              display={{ base: "flex", md: "none" }}
-              aria-label="Open menu"
-              fontSize="20px"
-              color={useColorModeValue("gray.800", "inherit")}
-              variant="ghost"
-              icon={<AiOutlineMenu />}
-              onClick={onOpen}
-            />
-            <Drawer
-              onClose={onClose}
-              isOpen={isOpen}
-              placement="top"
-              isCentered
-              isFullHeight
-              motionPreset="slideInBottom"
-            >
-              <DrawerOverlay />
-
-              <DrawerContent px={{ base: 2, md: 8, lg: 32 }}>
-                <DrawerHeader mb={10} w="full">
-                  {/* <VStack> */}
-                  <Button
-                    width="full"
-                    display={{ base: "flex", md: "none" }}
-                    aria-label="Open menu"
-                    fontSize="20px"
-                    color={useColorModeValue("gray.800", "inherit")}
-                    variant="ghost"
-                    leftIcon={<AiOutlineClose />}
-                    onClick={onClose}
-                    marginTop={8}
-                  >
-                    Close
-                  </Button>
-                  {/* <Logo onClick={onLogoClick} /> */}
-                  {/* </VStack> */}
-                </DrawerHeader>
-                <DrawerBody>
-                  <VStack flexDirection="column" spacing={6}>
-                    {navItems.map((navItem, i) => {
-                      return (
-                        <NavButtonMobile
-                          {...navItem}
-                          key={i}
-                          onClose={onClose}
-                        />
-                      );
-                    })}
-                  </VStack>
-                </DrawerBody>
-              </DrawerContent>
-            </Drawer>
+          <Box display={{ base: "block", md: "none" }}>
+            <NavbarToggle toggle={isOpen ? onClose : onOpen} />
           </Box>
-        </HStack>
+        </Flex>
+        <MotionFlex
+          display={{ base: "none" }}
+          variants={variants}
+          height={0}
+          flexGrow={1}
+          marginTop={"12px"}
+          width={"full"}
+          left={0}
+          alignItems="center"
+          flexDirection="column"
+          // py={16}
+        >
+          {navItems.map((navItem, i) => (
+            <NavButtonMobile {...navItem} key={i} />
+          ))}
+        </MotionFlex>
       </Container>
-    </Flex>
+    </MotionFlex>
   );
 };
 

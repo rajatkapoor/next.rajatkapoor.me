@@ -16,7 +16,13 @@ const fonts = {
   heroHeading: "Raleway",
   logo: "Comfortaa",
 };
-const layerStyles = {};
+const layerStyles = {
+  glass: {
+    backgroundColor: "rgba(255,255,255,0.1)",
+    backdropFilter: "blur(8px) saturate(180%)",
+    border: "1px solid rgba(209, 213, 219, 0.3)",
+  },
+};
 const textStyles = {
   gradient: {
     bgGradient: "linear(to-l, #7928CA,#FF0080)",
