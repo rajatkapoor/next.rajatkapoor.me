@@ -1,32 +1,38 @@
 import {
-  Button,
-  Flex,
-  Heading,
-  HStack,
-  Stack,
-  Text,
   Box,
-} from "@chakra-ui/react";
-import React from "react";
-import ChakraNextImage from "./ChakraNextImage";
-import {
+  Heading,
+  Stack,
+  Flex,
+  Text,
   Tag,
-  TagLabel,
-  TagLeftIcon,
-  TagRightIcon,
-  TagCloseButton,
+  Container,
 } from "@chakra-ui/react";
-
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { MotionStack, MotionHeading } from "./motion";
+import React from "react";
 
-const WorkCard = ({ title, text, date, imgSrc, imgAlt, tags, link }) => {
+import { MotionHeading, MotionStack } from "../components/motion";
+import ChakraNextImage from "../components/ChakraNextImage";
+import mocklyImage from "../assets/mockly-a.png";
+
+const mockly = () => {
+  const title = "Mockly";
+  const text =
+    "Mockly is a easy to use ebook mockup generator. Perfect for generating simple 3d mockups for your info products and ebooks";
+  const imgSrc = mocklyImage;
+  const imgAlt = "Mockly image";
+  const tags = ["react", "firebase", "ebooks", "product hunt #1"];
+  const link = "/mockly";
+
   return (
-    <Link href={link}>
+    <Flex
+      alignItems="center"
+      justifyContent="center"
+      w="full"
+      alignSelf="center"
+    >
       <MotionStack
-        maxW={{ base: "450px" }}
         w={{ base: "90%" }}
+        maxW={"5xl"}
         h="100%"
         boxShadow={"2xl"}
         rounded="2xl"
@@ -57,7 +63,7 @@ const WorkCard = ({ title, text, date, imgSrc, imgAlt, tags, link }) => {
             <MotionHeading size={"md"} layoutId={`${title}-title`}>
               {title}
             </MotionHeading>
-            <Text noOfLines={3}>{text}</Text>
+            <Text>{text}</Text>
           </Stack>
           {/* <Button
           variant="unstyled"
@@ -69,8 +75,8 @@ const WorkCard = ({ title, text, date, imgSrc, imgAlt, tags, link }) => {
         </Button> */}
         </Stack>
       </MotionStack>
-    </Link>
+    </Flex>
   );
 };
 
-export default WorkCard;
+export default mockly;

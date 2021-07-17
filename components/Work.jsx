@@ -16,6 +16,7 @@ const WORKS = [
     imgSrc: mocklyImage,
     imgAlt: "Mockly image",
     tags: ["react", "firebase", "ebooks", "product hunt #1"],
+    link: "/mockly",
   },
   {
     title: "Timely",
@@ -23,6 +24,7 @@ const WORKS = [
     imgSrc: timelyImage,
     imgAlt: "timely image",
     tags: ["slack", "timezone", "remote life"],
+    link: "/mockly",
   },
   {
     title: "Let them kill",
@@ -30,6 +32,7 @@ const WORKS = [
     imgSrc: ltkImage,
     imgAlt: "let them kill image",
     tags: ["game dev", "unity", "android"],
+    link: "/mockly",
   },
   {
     title: "Ruby Science Foundation",
@@ -37,6 +40,7 @@ const WORKS = [
     imgSrc: scirubyImage,
     imgAlt: "simple cv image",
     tags: ["GSoC", "open source", "ruby", "c++"],
+    link: "/mockly",
   },
   {
     title: "Range-IT",
@@ -44,6 +48,7 @@ const WORKS = [
     imgSrc: rangeitImage,
     imgAlt: "range it project",
     tags: ["python", "computer vision", "pointcloud", "research"],
+    link: "/mockly",
   },
   {
     title: "Simple CV",
@@ -51,6 +56,7 @@ const WORKS = [
     imgSrc: simpleCVImage,
     imgAlt: "simple cv image",
     tags: ["GSoC", "open source", "python", "c++"],
+    link: "/mockly",
   },
 ];
 
@@ -83,7 +89,7 @@ const Work = ({ refProp }) => {
         justifyContent="space-evenly"
       >
         {WORKS.map((work, i) => {
-          const { title, text, imgSrc, imgAlt, tags } = work;
+          const { title, text, imgSrc, imgAlt, tags, link } = work;
           return (
             <WorkCard
               title={title}
@@ -92,6 +98,7 @@ const Work = ({ refProp }) => {
               imgAlt={imgAlt}
               tags={tags}
               key={i}
+              link={link}
             />
           );
         })}
