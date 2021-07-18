@@ -1,13 +1,15 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../theme";
-import { AnimateSharedLayout } from "framer-motion";
+import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 
 function MyApp({ Component, pageProps }) {
-  return (
+  const getLayout = Component.getLayout || ((page) => page);
+
+  return getLayout(
     <ChakraProvider theme={theme}>
-      <AnimateSharedLayout type="crossfade">
+      <AnimatePresence exitBeforeEnter>
         <Component {...pageProps} />
-      </AnimateSharedLayout>
+      </AnimatePresence>
     </ChakraProvider>
   );
 }
