@@ -1,4 +1,4 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Box, useColorModeValue } from "@chakra-ui/react";
 import theme from "../theme";
 import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 

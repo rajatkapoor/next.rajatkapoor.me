@@ -11,6 +11,8 @@ const colors = {
     700: "#2a69ac",
   },
   accent: "rebeccapurple",
+  backgroundDark: "black",
+  backgroundLight: "white",
 };
 const fonts = {
   heroHeading: "Raleway",
@@ -30,6 +32,12 @@ const textStyles = {
   },
 };
 
-const theme = extendTheme({ colors, fonts, layerStyles, textStyles });
+const theme = extendTheme({
+  colors,
+  fonts,
+  layerStyles,
+  textStyles,
+  initialColorMode: "dark",
+});
 
 export default theme;

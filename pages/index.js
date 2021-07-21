@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Box, Container, Flex } from "@chakra-ui/react";
+import { Box, Container, Flex, useColorModeValue } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
 import Work from "../components/Work";
@@ -42,7 +42,7 @@ export default function Home() {
     },
   ];
   return (
-    <Box>
+    <Box bg={useColorModeValue("backgroundLight", "backgroundDark")}>
       <Head>
         <title>Rajat Kapoor - Full stack developer</title>
         <meta
