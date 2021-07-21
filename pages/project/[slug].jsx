@@ -113,7 +113,7 @@ const titleVariants = {
   },
 };
 
-const Project = ({ title, text, imgSrc, imgAlt, tags, link }) => {
+const Project = ({ title, text, imgSrc, imgAlt, tags }) => {
   return (
     <Stack
       initial="exit"
@@ -169,7 +169,7 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   return {
     paths: WORKS.map((work) => `/project/${work.slug}`),
-    fallback: true,
+    fallback: false,
   };
 }
 
