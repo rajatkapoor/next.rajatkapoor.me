@@ -1,11 +1,12 @@
 import * as React from "react";
+import { useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 const Path = (props) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
-    stroke="hsl(0, 0%, 18%)"
+    stroke={useColorModeValue("black", "white")}
     strokeLinecap="round"
     {...props}
   />
@@ -13,7 +14,7 @@ const Path = (props) => (
 
 const NavbarToggle = ({ toggle }) => (
   <button onClick={toggle}>
-    <svg width="23" height="23" viewBox="0 0 23 23">
+    <svg width="25" height="20" viewBox="0 0 20 20">
       <Path
         variants={{
           closed: { d: "M 2 2.5 L 20 2.5" },

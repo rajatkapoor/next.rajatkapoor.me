@@ -37,7 +37,16 @@ const theme = extendTheme({
   fonts,
   layerStyles,
   textStyles,
-  initialColorMode: "dark",
+  initialColorMode: "light",
+  components: { Button: { baseStyle: { _focus: { boxShadow: "none" } } } },
+  styles: {
+    global: (props) => ({
+      "html, body": {
+        "-webkit-tap-highlight-color":
+          "transparent" /* for removing the highlight */,
+      },
+    }),
+  },
 });
 
 export default theme;

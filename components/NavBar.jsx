@@ -9,8 +9,11 @@ import {
   useDisclosure,
   Button,
   Container,
+  useColorMode,
 } from "@chakra-ui/react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { IoMoon, IoSunny } from "react-icons/io5";
+import { FaSun } from "react-icons/fa";
 import NavButton from "./NavButton";
 import NavbarToggle from "./NavbarToggle";
 import {
@@ -25,6 +28,8 @@ import {
 import NavButtonMobile from "./NavButtonMobile";
 import Logo from "./Logo";
 import { motion } from "framer-motion";
+import { MotionIconButton } from "./motion";
+import DarkModeToggle from "./DarkModeToggle";
 
 const MotionFlex = motion(Flex);
 const variants = {
@@ -47,6 +52,8 @@ const variants = {
 };
 
 const NavBar = ({ navItems, onLogoClick }) => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -75,13 +82,15 @@ const NavBar = ({ navItems, onLogoClick }) => {
             {navItems.map((navItem, i) => {
               return <NavButton {...navItem} key={i} />;
             })}
+            {/* <DarkModeToggle /> */}
           </HStack>
-          <Box display={{ base: "block", md: "none" }}>
+          <Box display={{ base: "flex", md: "none" }}>
+            {/* <DarkModeToggle /> */}
             <NavbarToggle toggle={isOpen ? onClose : onOpen} />
           </Box>
         </Flex>
         <MotionFlex
-          display={{ base: "none" }}
+          // display={{ base: "none" }}
           variants={variants}
           height={0}
           flexGrow={1}
