@@ -90,6 +90,7 @@ const NavBar = ({ navItems, onLogoClick }) => {
           </Box>
         </Flex>
         <MotionFlex
+          display={{ base: "none" }}
           variants={variants}
           height={0}
           flexGrow={1}
