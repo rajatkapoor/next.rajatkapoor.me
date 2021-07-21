@@ -115,7 +115,7 @@ const titleVariants = {
 
 const Project = ({ title, text, imgSrc, imgAlt, tags }) => {
   return (
-    <Stack
+    <MotionStack
       initial="exit"
       animate="enter"
       exit="exit"
@@ -124,18 +124,18 @@ const Project = ({ title, text, imgSrc, imgAlt, tags }) => {
       minH={"100vh"}
     >
       <Stack maxW={"4xl"} w={{ base: "80%" }}>
-        <Flex variants={backVariants} marginY={{ base: 4, md: 8 }}>
-          <Link href="/">
-            <Icon as={IoArrowBack} width={8} height={8} />
-          </Link>
-        </Flex>
+        <MotionFlex variants={backVariants} marginY={{ base: 4, md: 8 }}>
+          {/* <Link href="/">
+             <Icon as={IoArrowBack} width={8} height={8} /> 
+          </Link> */}
+        </MotionFlex>
         <Stack>
-          <Heading size={"2xl"} variants={titleVariants}>
+          <MotionHeading size={"2xl"} variants={titleVariants}>
             {title}
-          </Heading>
+          </MotionHeading>
           <Flex wrap="wrap">
             {tags.map((tag) => (
-              <Tag
+              <MotionTag
                 mr={2}
                 my={1}
                 key={tag}
@@ -144,18 +144,18 @@ const Project = ({ title, text, imgSrc, imgAlt, tags }) => {
                 variant="outline"
               >
                 {tag}
-              </Tag>
+              </MotionTag>
             ))}
           </Flex>
           <Stack paddingTop={2} flexBasis={1}>
-            <Text variants={textVariants}>{text}</Text>
-            <Text fontSize="xs" variants={textVariants}>
+            <MotionText variants={textVariants}>{text}</MotionText>
+            <MotionText fontSize="xs" variants={textVariants}>
               (more details coming soon)
-            </Text>
+            </MotionText>
           </Stack>
         </Stack>
       </Stack>
-    </Stack>
+    </MotionStack>
   );
 };
 
