@@ -35,21 +35,20 @@ let easing = [0.175, 0.85, 0.42, 0.96];
 //   },
 // };
 
-// const containerVariants = {
-//   enter: {
-//     // backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-//     transition: {
-//       duration: 30,
-//       loop: Infinity,
-//     },
-//   },
-//   exit: {},
-// };
+const containerVariants = {
+  enter: {
+    // // backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+    // transition: {
+    //   duration: 30,
+    //   loop: Infinity,
+    // },
+  },
+  exit: {},
+};
 
 const textVariants = {
-  exit: { y: 100, opacity: 0, transition: { duration: 0.5, ease: easing } },
+  exit: { opacity: 0, transition: { duration: 0.5, ease: easing } },
   enter: {
-    y: 0,
     opacity: 1,
     transition: { delay: 0.5, duration: 0.5, ease: easing },
   },
@@ -122,6 +121,7 @@ const Project = ({ title, text, imgSrc, imgAlt, tags }) => {
       alignItems="center"
       w="full"
       minH={"100vh"}
+      // variants={containerVariants}
     >
       <Stack maxW={"4xl"} w={{ base: "80%" }}>
         <MotionFlex variants={backVariants} marginY={{ base: 4, md: 8 }}>
