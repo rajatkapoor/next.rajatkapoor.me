@@ -46,7 +46,7 @@ const WorkCard = ({ title, text, date, imgSrc, imgAlt, tags, link, slug }) => {
           height={"300px"}
           blur
           objectFit="cover"
-          layoutId={`${title}-image`}
+          // layoutId={`${title}-image`}
         />
         <Flex
           backgroundColor="rgba(255,255,255,0.2)"

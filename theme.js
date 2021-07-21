@@ -42,8 +42,7 @@ const theme = extendTheme({
   styles: {
     global: (props) => ({
       "html, body": {
-        "-webkit-tap-highlight-color":
-          "transparent" /* for removing the highlight */,
+        WebkitTapHighlightColor: "transparent",
       },
     }),
   },
