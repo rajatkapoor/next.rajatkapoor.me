@@ -125,9 +125,9 @@ const Project = ({ title, text, imgSrc, imgAlt, tags }) => {
     >
       <Stack maxW={"4xl"} w={{ base: "80%" }}>
         <MotionFlex variants={backVariants} marginY={{ base: 4, md: 8 }}>
-          {/* <Link href="/">
-             <Icon as={IoArrowBack} width={8} height={8} /> 
-          </Link> */}
+          <Link href="/">
+            <Icon as={IoArrowBack} width={8} height={8} />
+          </Link>
         </MotionFlex>
         <Stack>
           <MotionHeading size={"2xl"} variants={titleVariants}>
