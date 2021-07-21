@@ -47,8 +47,9 @@ const containerVariants = {
 };
 
 const textVariants = {
-  exit: { opacity: 0, transition: { duration: 0.5, ease: easing } },
+  exit: { y: 100, opacity: 0, transition: { duration: 0.5, ease: easing } },
   enter: {
+    y: 0,
     opacity: 1,
     transition: { delay: 0.5, duration: 0.5, ease: easing },
   },
@@ -114,17 +115,29 @@ const titleVariants = {
 
 const Project = ({ title, text, imgSrc, imgAlt, tags }) => {
   return (
-    <MotionStack
-      initial="exit"
-      animate="enter"
-      exit="exit"
+    <Stack
+      // initial="exit"
+      // animate="enter"
+      // exit="exit"
       alignItems="center"
       w="full"
       minH={"100vh"}
       // variants={containerVariants}
     >
-      <Stack maxW={"4xl"} w={{ base: "80%" }}>
-        <MotionFlex variants={backVariants} marginY={{ base: 4, md: 8 }}>
+      <MotionStack
+        maxW={"4xl"}
+        w={{ base: "80%" }}
+        initial="exit"
+        animate="enter"
+        exit="exit"
+      >
+        <MotionFlex
+          initial="exit"
+          animate="enter"
+          exit="exit"
+          variants={backVariants}
+          marginY={{ base: 4, md: 8 }}
+        >
           <Link href="/">
             <Icon as={IoArrowBack} width={8} height={8} />
           </Link>
@@ -154,8 +167,8 @@ const Project = ({ title, text, imgSrc, imgAlt, tags }) => {
             </MotionText>
           </Stack>
         </Stack>
-      </Stack>
-    </MotionStack>
+      </MotionStack>
+    </Stack>
   );
 };
 
