@@ -90,7 +90,6 @@ const NavBar = ({ navItems, onLogoClick }) => {
           </Box>
         </Flex>
         <MotionFlex
-          // display={{ base: "none" }}
           variants={variants}
           height={0}
           flexGrow={1}
@@ -99,10 +98,9 @@ const NavBar = ({ navItems, onLogoClick }) => {
           left={0}
           alignItems="center"
           flexDirection="column"
-          // py={16}
         >
           {navItems.map((navItem, i) => (
-            <NavButtonMobile {...navItem} key={i} />
+            <NavButtonMobile {...navItem} key={i} onClose={onClose} />
           ))}
         </MotionFlex>
       </Container>

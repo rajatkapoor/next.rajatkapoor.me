@@ -20,12 +20,12 @@ import { motion } from "framer-motion";
 // };
 
 const MotionButton = motion(Button);
-const NavButtonMobile = ({ text, onClickNav, toggleOpen, leftIcon }) => {
+const NavButtonMobile = ({ text, onClickNav, onClose, leftIcon }) => {
   return (
     <MotionButton
-      variant="ghost"
+      variant="unstyled"
       onClick={() => {
-        toggleOpen();
+        onClose();
         setTimeout(() => {
           onClickNav();
         }, 300);
