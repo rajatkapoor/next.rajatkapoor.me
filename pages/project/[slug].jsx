@@ -121,7 +121,7 @@ const Project = ({ title, text, imgSrc, imgAlt, tags }) => {
       // exit="exit"
       alignItems="center"
       w="full"
-      minH={"100vh"}
+      // minH={"100vh"}
       // variants={containerVariants}
     >
       <MotionStack
@@ -136,7 +136,7 @@ const Project = ({ title, text, imgSrc, imgAlt, tags }) => {
           animate="enter"
           exit="exit"
           variants={backVariants}
-          marginY={{ base: 4, md: 8 }}
+          marginY={{ base: 4 }}
         >
           <Link href="/">
             <Icon as={IoArrowBack} width={8} height={8} />
